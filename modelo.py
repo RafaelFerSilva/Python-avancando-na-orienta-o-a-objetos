@@ -28,8 +28,8 @@ class Filme(Programa):
         super().__init__(nome, ano)
         self.duracao = duracao
 
-    def imprime(self):
-        print(f'{self.nome} - {self.ano} - {self.duracao} min - {self.likes}')
+    def __str__(self):
+        return f'{self.nome} - {self.ano} - {self.duracao} min - {self.likes}'
 
 
 class Series(Programa):
@@ -37,8 +37,8 @@ class Series(Programa):
         super().__init__(nome, ano)
         self.temporadas = temporadas
 
-    def imprime(self):
-        print(f'{self.nome} - {self.ano} - {self.temporadas} temporadas - {self.likes}')
+    def __str__(self):
+        return f'{self.nome} - {self.ano} - {self.temporadas} temporadas - {self.likes}'
 
 
 vingadores = Filme('Vingadores - Guerra infinita', 2018, 160)
@@ -50,4 +50,4 @@ atlanta.dar_like()
 filmes_series = [vingadores, atlanta]
 
 for programa in filmes_series:
-    programa.imprime()
+    print(programa)
